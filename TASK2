@@ -1,0 +1,42 @@
+public class REVERSEASTRING {
+    public static void main(String[] args) {
+            String s="abhinav";
+           // using iteration
+//            String rev=" ";
+//            char[] c=new char[s.length()];
+//            for(int i=0;i<s.length();i++)
+//            {
+//                c[i]=s.charAt(i);
+//            }
+//            for(int i=c.length-1;i>=0;i--)
+//            {
+//                rev=rev+c[i];
+//            }
+//            System.out.println(rev);
+        //using recursion
+                    String rev=" ";
+            char[] c=new char[s.length()];
+            for(int i=0;i<s.length();i++)
+            {
+                c[i]=s.charAt(i);
+            }
+            reverse(c,0);
+            String result=new String(c);
+            System.out.println(result);
+
+
+
+    }
+    public static void reverse(char[] c,int index)
+    {
+        if(index==c.length/2)
+        {
+            return;
+        }
+        reverse(c,index+1);
+        char ch=c[index];
+        c[index]=c[c.length-1-index];
+        c[c.length-1-index]=ch;
+    }
+
+}
